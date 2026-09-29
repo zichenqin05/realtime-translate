@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>视频实时中文字幕</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main>
+      <header class="header">
+        <span class="brand-mark" aria-hidden="true">中</span>
+        <div>
+          <p class="eyebrow">LIVE SUBTITLES</p>
+          <h1>实时中文字幕</h1>
+        </div>
+      </header>
+
+      <p class="intro">打开视频后，点击开始即可翻译当前标签页的语音。</p>
+
+      <section class="control-card" aria-label="翻译控制">
+        <div id="status" class="status" role="status" aria-live="polite" data-phase="idle">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span id="statusText">正在检查状态…</span>
+        </div>
+        <div class="actions">
+          <button id="start" type="button" class="primary">开始翻译 <span aria-hidden="true">→</span></button>
+          <button id="stop" type="button" class="secondary" hidden>停止翻译</button>
+        </div>
+        <p class="control-note">自动处理语音语言 · 输出中文字幕</p>
+      </section>
+
+      <section class="settings-card" aria-labelledby="keyTitle">
+        <div class="section-heading">
+          <h2 id="keyTitle">OpenAI API Key</h2>
+          <span id="keyState" class="key-state">正在检查…</span>
+        </div>
+        <label class="sr-only" for="apiKey">OpenAI API Key</label>
+        <input id="apiKey" type="password" autocomplete="off" spellcheck="false" placeholder="粘贴 API Key；已保存时可留空">
+        <div class="key-footer">
+          <span>仅保存在此浏览器中</span>
+          <button id="forgetKey" type="button" class="text-button">删除 Key</button>
+        </div>
+      </section>
+
+      <p class="footnote">当前标签页音频会发送到 OpenAI API，按使用时长计费。新页面需重新点击开始；视频独占全屏时请使用网页内播放。</p>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "视频实时中文字幕",
+  "version": "0.4.0",
+  "description": "翻译当前标签页中的语音，并在网页上显示中文字幕。",
+  "minimum_chrome_version": "116",
+  "permissions": ["activeTab", "scripting", "tabCapture", "offscreen", "storage"],
+  "host_permissions": ["https://api.openai.com/*"],
+  "background": { "service_worker": "background.js" },
+  "action": {
+    "default_title": "视频实时中文字幕",
+    "default_popup": "popup.html"
+  }
+}

@@ -1,0 +1,11 @@
+# Local credentials and generated packages
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.crx
+node_modules/
+.DS_Store
+Thumbs.db
+*.preview.html
